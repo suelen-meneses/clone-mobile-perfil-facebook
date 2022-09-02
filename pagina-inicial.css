@@ -12,12 +12,105 @@
   --text-secondary: #65676b;
   --btn-primary: #1b74e4;
   --btn-secondary: #e4e6eb;
+  --filter-primary-icon: invert(100%);
+  --filter-secondary-icon: invert(8%) sepia(10%) saturate(200%) saturate(200%) saturate(166%) hue-rotate(177deg) brightness(104%) contrast(91%);
   --padding-inline: 1rem;
 }
 
 img {
   width: 100%;
 }
+
+/* ======= HEADER ============== */
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 0.4rem;
+  padding: 0.5rem 0.8rem;
+}
+
+.header__btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.header__btn--icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__btn--icon img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.header__btn--icon:not(.header__btn--search) {
+  background-color: var(--btn-secondary);
+}
+
+.header__btn--search {
+  background-color: #F0F2F5;
+  margin-right: 0.5rem;
+}
+
+.header__btn--search img {
+  opacity: 0.5;
+}
+
+/* ======= BOTÕES ============== */
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.4rem;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  border-radius: 0.2rem; /* <- */
+  border: none;
+}
+
+.btn__icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.btn__icon-secondary {
+  width: 1rem;
+  height: 1rem;
+}
+.btn__label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btn--primary {
+  background: var(--btn-primary);
+  color: white; 
+}
+
+.btn--primary .btn__icon img { 
+  filter: var(--filter-primary-icon);
+  /* -webkit-filter: var(--filter-primary-icon); */
+}
+
+.btn--secondary {
+  background: var(--btn-secondary);
+  color: var(--text-primary); 
+}
+
+.btn--secondary .btn__icon img { 
+  filter: var(--filter-secondary-icon);
+  /* -webkit-filter: var(--filter-secondary-icon); */
+}
+
+/* ======= PAGE ============== */
 
 .container {
   max-width: 320px;
@@ -47,6 +140,10 @@ img {
   position: absolute;
   bottom: 10px;
   right: 10px;
+  width: initial;
+  height: 2rem;
+  padding-inline: 1rem;
+  background: white;
 }
 
 .page-top__avatar {
@@ -69,6 +166,15 @@ img {
   position: absolute;
   top: 80%;
   left: 75%;
+  border: none;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+
+.page-top__avatar__add img {
+  width: 1.2rem;
+
 }
 
 .page-top__user-name {
@@ -133,29 +239,3 @@ img {
      margin-bottom: 0.5rem;
 } 
 */
-
-/* ======= BOTÕES ============== */
-
-.btn {
-  display: block;
-  width: 100%;
-  height: 2.5rem;
-  text-align: center;
-  border-radius: 0.2rem; /* <- */
-  border: none;
-}
-
-.btn span {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.btn--primary {
-  background: var(--btn-primary);
-  color: white; 
-}
-
-.btn--secondary {
-  background: var(--btn-secondary);
-  color: var(--text-primary); 
-}
